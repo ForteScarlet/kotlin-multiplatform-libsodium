@@ -1,6 +1,6 @@
 
 name: Build project and run tests
-run-name: ${{ github.actor }} pull request
+run-name: ${{ github.actor }} push
 on:
   push:
     branches:

@@ -209,6 +209,13 @@ kotlin {
         }
     }
 
+    watchos64() {
+        binaries {
+            framework {
+                optimized = true
+            }
+        }
+    }
     watchosArm64() {
         binaries {
             framework {
@@ -354,7 +361,7 @@ kotlin {
         )
 
         val watchosArm = setOf(
-            "watchosArm64", "watchosArm32"
+           "watchos64", "watchosArm64", "watchosArm32"
         )
         val watchosSimulator = setOf(
             "watchosSimulatorArm64"
@@ -611,6 +618,10 @@ kotlin {
             }
 
             val watchosArm64Main by getting {
+                dependsOn(commonMain)
+            }
+
+            val watchos64Main by getting {
                 dependsOn(commonMain)
             }
 
